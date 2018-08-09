@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>请打开Console查看输出</title>
+</head>
+<body>
+	<script>
+		//参数解释[ID，名称，父ID]
+	var menuArr = [
+    [1, "Area1", -1],
+    [2, "Area2", -1],
+    [3, "Area1-1", 1],
+    [4, "Area1-2", 1],
+    [5, "Area2-1", 2],
+    [6, "Area2-2", 2],
+    [7, "Area1-2-3", 4],
+    [8, "Area2-2-1", 6],
+];
+
+	function getAllChild(arr){
+		//结构转换
+		changeToTree(arr);
+		var result = {};
+		//更改每个子元素类型（数组->对象）
+		for(var e of arr){
+			result[e[0]] = changeChildType(e);
+		}
+		return result;
+	}
+
+	//将数组转换为嵌套树型结构
+	function changeToTree(menuArr){
+		for(var i=menuArr.length-1; i>=0; i--){
+			//弹出元素的父ID，并删除父ID参数
+			var parent = menuArr[i].pop();
+			//根据ID遍历寻找父元素
+			for(var j=i-1; j>=0; j--){
+				if(parent == menuArr[j][0]){
+					//在父元素中从第三个开始插入子元素
+					menuArr[j].splice(2, 0, menuArr[i]);
+					//删除原位置
+					menuArr.splice(i, 1);
+				}
+			}
+		}
+	}
+
+	//更改元素类型
+	function changeChildType(arr){
+		var item = {};
+		item.name = arr[1];
+		//如果存在子元素递归转换
+		if(arr.length>2){
+			item.subMenu = {};
+			for(var i=2; i<arr.length; i++){
+				item.subMenu[arr[i][0]] = changeChildType(arr[i]);
+			}
+		}
+		return item;
+	}
+
+	console.log(getAllChild(menuArr));
+	</script>
+</body>
+</html>

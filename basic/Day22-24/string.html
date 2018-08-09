@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字符串的练习</title>
+</head>
+<body>
+    <div>
+    <label>String A:
+        <input id="radio-a" type="radio" checked="true" name="str-obj" value="a">
+    </label>
+    <textarea id="str-a"></textarea>
+    <label>String B:
+        <input id="radio-b" type="radio" name="str-obj" value="b">
+    </label>
+    <textarea id="str-b"></textarea>        
+    <label>Num A：<input id="num-a" type="number" value="0"></label>
+    <label>Num B：<input id="num-b" type="number" value="1"></label>
+</div>
+<div>
+    <button onclick='btn1()'>获取当前选中输入的内容长度</button>
+    <button onclick='btn2()'>当前选中输入中的第3个字符</button>
+    <button onclick='btn3()'>把两个输入框的文字连接在一起输出（concat）</button>
+    <button onclick='btn4()'>输入B中的内容，在输入A的内容中第一次出现的位置（indexOf）</button>
+    <button onclick='btn5()'>输入A中的内容，在输入B的内容中最后一次出现的位置（lastIndexOf）</button>
+    <button onclick='btn6()'>使用slice获取选中输入框内容的部分内容，参数为num-a及num-b</button>
+    <button onclick='btn7()'>当前选中输入框的行数</button>
+    <button onclick='btn8()'>使用substr获取选中输入框内容的子字符串，参数为num-a及num-b</button>
+    <button onclick='btn9()'>把所选输入框中的内容全部转为大写</button>
+    <button onclick='btn10()'>把所选输入框中的内容全部转为小写</button>
+    <button onclick='btn11()'>把所选输入框中内容的半角空格全部去除</button>
+    <button onclick='btn12()'>把所选输入框中内容的a全部替换成另外一个输入框中的内容</button>
+</div>
+<p id="result"></p>
+
+<script>
+    var textA = document.getElementById('str-a');
+    var textB = document.getElementById('str-b');
+    var numA = document.getElementById('num-a');
+    var numB = document.getElementById('num-b');
+    var parent = document.querySelector('div');
+    var result = document.getElementById('result');
+    var checkId = 'str-a';
+
+    parent.onchange = function(e) {
+        if(e.target.name == 'str-obj'){
+            checkId = e.target.value == 'a'? 'str-a':'str-b';
+            console.log(checkId);
+        }
+    }
+    function btn1() {
+        var text = document.getElementById(checkId).value;
+        result.innerHTML = text.length;
+    }
+    function btn2() {
+        var text = document.getElementById(checkId).value;
+        result.innerHTML = text.charAt(2);
+    }
+    function btn3() {
+        result.innerHTML = (textA.value).concat(textB.value);
+    }
+    function btn4() {
+        result.innerHTML = (textA.value).indexOf(textB.value);
+    }
+    function btn5() {
+        result.innerHTML = (textB.value).lastIndexOf(textA.value);
+    }
+    function btn6() {
+        var text = document.getElementById(checkId).value;
+        result.innerHTML = text.slice(numA.value, numB.value);
+    }
+    function btn7() {
+        var text = document.getElementById(checkId).value;
+        result.innerHTML = text.split('\n').length;
+    }
+    function btn8() {
+        var text = document.getElementById(checkId).value;
+        result.innerHTML = text.substr(numA.value, numB.value);
+    }
+    function btn9() {
+        var text = document.getElementById(checkId).value;
+        result.innerHTML = text.toUpperCase();
+    }
+    function btn10() {
+        var text = document.getElementById(checkId).value;
+        result.innerHTML = text.toLowerCase();
+    }
+    function btn11() {
+        var text = document.getElementById(checkId).value;
+        result.innerHTML = text.split(' ').join('');
+    }
+    function btn12() {
+        var text = document.getElementById(checkId).value;
+        var anotherText = checkId=='str-a'? textB.value:textA.value;
+        result.innerHTML = text.split('a').join(anotherText);
+    }
+</script>
+</body>
+</html>

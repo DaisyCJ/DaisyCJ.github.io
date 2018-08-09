@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">    
+    <title>IFE ECMAScript</title>
+    <style>
+    </style>
+</head>
+<body>            
+    <div>
+        <label>Number A:<input id="radio-a" type="radio" name="math-obj" value="a"></label><input id="num-a" type="text">
+        <label>Number B:<input id="radio-b" type="radio" name="math-obj" value="b"></label><input id="num-b" type="text">
+    </div>
+    <div>
+        <button onclick="btn1()">判断当前选中的输入框输入内容是否为数字</button>
+        <button onclick="btn2()">把 A 四舍五入为 B 个小数位数的数字</button>
+        <button onclick="btn3()">当前选中数字的绝对值</button>
+        <button onclick="btn4()">对当前选中的数字进行上舍入</button>
+        <button onclick="btn5()">对当前选中的数字进行下舍入</button>
+        <button onclick="btn6()">把当前选中的数字四舍五入为最接近的整数</button>
+        <button onclick="btn7()">返回 A 和 B 中的最高值</button>
+        <button onclick="btn8()">返回 A 和 B 中的最低值</button>        
+    </div>
+    <p id="result"></p>
+    <script>
+    var radios = document.querySelector('div');
+    var textA = document.querySelector('#num-a');
+    var textB = document.querySelector('#num-b');
+    var result = document.querySelector('#result');
+    var inputName;
+    radios.onclick=function(e){
+        if(e.target.checked){
+            console.log('haha');
+            inputName = e.target.parentNode.nextSibling.id;
+            console.log(inputName);
+        }
+    }
+    function isInputNumber(){
+        if(Number(textA.value) && Number(textB.value)) {
+            console.log(Number(textA.value));
+            return true;
+        }
+        else{
+            console.log(Number(textA));
+            return false;
+        }
+    }
+    function btn1(){
+        var btnValue = document.getElementById(inputName).value;
+        if(Number(btnValue)){
+            result.innerHTML = "是数字";
+        }
+        else {
+            result.innerHTML = "不是数字";
+        }
+    }
+    function btn2(){
+        if(isInputNumber()){
+        //    var save = Math.pow(10,Number(textB.value));
+            result.innerHTML = (Number(textA.value)).toFixed(Number(textB.value));
+        }
+        else{
+            result.innerHTML = "请输入正确数字";
+        }
+    }
+    function btn3(){
+        var btnValue = document.getElementById(inputName).value;
+        result.innerHTML = Math.abs(Number(btnValue));
+    }
+    function btn4(){
+        var btnValue = document.getElementById(inputName).value;
+        result.innerHTML = Math.ceil(Number(btnValue));
+    }
+    function btn5(){
+        var btnValue = document.getElementById(inputName).value;
+        result.innerHTML = Math.floor(Number(btnValue));
+    }
+    function btn6(){
+        var btnValue = document.getElementById(inputName).value;
+        result.innerHTML = Math.round(Number(btnValue));
+    }
+    function btn7(){
+        result.innerHTML = Math.max(Number(textA.value), Number(textB.value));
+    }
+    function btn8(){
+        result.innerHTML = Math.min(Number(textA.value), Number(textB.value));
+    }
+    </script>
+</body>
+</html>

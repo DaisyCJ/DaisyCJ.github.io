@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>复杂页面的实现</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<aside class="aside">
+		<div class="sidebar">
+			<ul>
+				<li class="sidebar-item1"><a href=""></a></li>
+				<li class="sidebar-item2"><a href=""></a></li>
+				<li class="sidebar-item3"><a href=""></a></li>
+				<li class="sidebar-more"><a href=""></a></li>
+			</ul>
+		</div>
+		<div class="sidebar-setting clearfix">
+			<a class="sidebar-setting1" href=""> </a>
+			<a class="sidebar-setting2" href=""></a>
+		</div>
+	</aside>
+	<nav class="nav-sidebar">
+		<div class="menu nav-menu">
+			<div class="menu-title">
+				<h1>MENU
+				<a href="" class="setting"></a></h1>
+			</div>
+			<div class="menu-list">
+				<ul>
+					<li class="menu-item"><a href="">Overview</a></li>
+					<li class="menu-item"><a href="">Sales</a><span class="msg-tip">54</span></li>
+					<li class="menu-item"><a href="">Your Staff</a></li>
+					<li class="menu-item"><a href="">Analytics & Targeting</a></li>
+					<li class="menu-item"><a href="">What's New</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="menu nav-products">
+			<div class="menu-title">
+				<h1>YOUR PRODUCTS
+				<a href="" class="setting"></a></h1>
+			</div>
+			<div class="menu-list">
+				<ul>
+					<li class="menu-item product-books"><a href="">Books</a></li>
+					<li class="menu-item product-tutorials"><a href="">Tutorials</a></li>
+					<li class="menu-item product-stocks"><a href="">Stocks</a></li>
+					<li class="menu-item product-infographics"><a href="">Infographics</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="menu nav-dashboard">
+			<div class="menu-title">
+				<h1>DASHBOARD
+				<a href="" class="setting"></a></h1>
+			</div>
+			<div class="menu-list">
+				<ul>
+					<li class="menu-item"><a href="">Messages</a><span class="msg-tip">21</span></li>
+					<li class="menu-item"><a href="">Connections</a></li>
+					<li class="menu-item"><a href="">Integrations</a><span class="msg-tip warning-tip">!</span></li>
+					<li class="menu-item"><a href="">Account Settings</a></li>
+					<li class="menu-item"><a href="">App Settings</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="goals-msg">
+			<div class="menu-title">
+				<h1>Monthly Goals</h1>
+				<p><b>$580</b>/$3200</p>
+			</div>
+			<meter value='580' max="3200"></meter>
+		</div>
+	</nav>
+	<main class="main">
+		<div class="main-header clearfix">
+			<h1>Messages</h1>
+			<div class="user-msg">
+				<h2 class="user-name">Jordan J.</h2>
+				<small class="user-describe">Administor</small>
+				<a class="dropdown" href="" aria-expander="false" onclick="dropdown()"></a>
+				<ul id="dropdown-menu">
+					<li><a href="">item1</a></li>
+					<li><a href="">item2</a></li>
+					<li><a href="">item3</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="main-content clearfix">
+			<div class="conlumn conlumn-left">
+				<div class="search">
+					<input type="text" placeholder="Search">
+					<a href=""></a>
+				</div>
+				<div class="messages-list">
+					<div class="messages-item">
+						<div class="user-msg">
+							<div class="basic-msg">
+								<h2 class="user-name">Bessie Berry</h2>
+								<small class="user-describe">Twitter</small>
+							</div>
+							<div class="chat-time">
+								<p>3m</p>
+							</div>
+						</div>
+						<div class="chat-message">
+							<p>I pay for the 4Mb/sec down, 512 Kb/sec up service from O2. In fact, it's relatively quick, and stable...</p>
+							<span class="msg-tip">4</span>
+						</div>
+					</div>
+					<div class="messages-item">
+						<div class="user-msg">
+							<div class="basic-msg">
+								<h2 class="user-name">Victor Weber</h2>
+								<small class="user-describe">Adobe</small>
+							</div>
+							<div class="chat-time">
+								<p>8m</p>
+							</div>
+						</div>
+						<div class="chat-message">
+							<p>I shared this on my fb wall a few months back, and I thought I'd share again because it's such a great...</p>
+						</div>
+					</div>
+					<div class="messages-item">
+						<div class="user-msg">
+							<div class="basic-msg">
+								<h2 class="user-name">Dustin Benson</h2>
+								<small class="user-describe">Facebook</small>
+							</div>
+							<div class="chat-time">
+								<p>Yesterday</p>
+							</div>
+						</div>
+						<div class="chat-message">
+							<p>If there is anyone who needs an invitation please add yourself in the comments of this post!</p>
+						</div>
+					</div>
+					<div class="messages-item">
+						<div class="user-msg">
+							<div class="basic-msg">
+								<h2 class="user-name">Jack Mason</h2>
+								<small class="user-describe">Yahoo</small>
+							</div>
+							<div class="chat-time">
+								<p>Yesterday</p>
+							</div>
+						</div>
+						<div class="chat-message">
+							<p>BruteDC is a peer-to-peer movie+tv series sharing and downloading platform which works on intranet inside...</p>
+						</div>
+					</div>
+					<div class="messages-item">
+						<div class="user-msg">
+							<div class="basic-msg">
+								<h2 class="user-name">Stephen Shelton</h2>
+								<small class="user-describe">Snapchat</small>
+							</div>
+							<div class="chat-time">
+								<p>13 Jun</p>
+							</div>
+						</div>
+						<div class="chat-message">
+							<p>Yes, p2p traffic is often filtered (QoSed). Although i do use BT on O2 wires, and in good days dl speed...</p>
+						</div>
+					</div>
+					<div class="messages-item">
+						<div class="user-msg">
+							<div class="basic-msg">
+								<h2 class="user-name">Sally Willis</h2>
+								<small class="user-describe">Twitter</small>
+							</div>
+							<div class="chat-time">
+								<p>12 Jun</p>
+							</div>
+						</div>
+						<div class="chat-message">
+							<p>Yes, it's O2: 'internet extreme', which is no longer offered.</p>
+						</div>
+					</div>
+					<div class="messages-item">
+						<div class="user-msg">
+							<div class="basic-msg">
+								<h2 class="user-name">Robert Patton</h2>
+								<small class="user-describe">A Team</small>
+							</div>
+							<div class="chat-time">
+								<p>9 Jun</p>
+							</div>
+						</div>
+						<div class="chat-message">
+							<p>I change my service from this 4Mb plan to their much cheaper 8M</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="conlumn conlumn-right">
+				<div class="room-header">
+					<h2>Bessie Berry</h2>
+					<div class="setting-btn">
+						<ul>
+							<li>
+								<button class="button setting-btn-user" type="button"></button><button class="button setting-btn-upload" type="button"></button><button class="button setting-btn-trash" type="button"></button>
+							</li>
+							<span>1 of 28</span>
+							<li>
+								<button class="button setting-btn-left" type="button"></button><button class="button setting-btn-right" type="button"></button>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="room-content">
+					<article class="chat-item">
+						<a class="face-icon" href=""></a>
+						<h2><strong>Bessie Berry </strong>8:31 AM</h2>
+						<p>Hi guys Ive got the O2 package and have really slow internet. A speed check online said i can get 3mbps but it seems more like 0.5 these days, just freezing and taking ages to open pages and open audio files for example. I have decided to switch to the UPC package which offers 10mbps but do you think i will get it?</p>
+					</article>
+					<article class="chat-item">
+						<a class="face-icon" href=""></a>
+						<h2><strong>Jordan Jackson </strong>8:31 AM</h2>
+						<p>I have internet for 9 month and nevere could benefit from the full capacity of 5Mbit/s as it is filtered by O2 when it detect traffic on public p2p sharing in my situation all my internet speed slows to 512Kbit/s. I never had 400KB/s on when downloading from p2p public servers like torrent emule etc. I downoad with 500KB/s from private trakers instead. So conlcusion O2 block trafic on p2p connections. I have made hundreds of test in Italy and Sweden and Romania with the same file to doanload with the same setting and same antivirus and just needed to open ports in firewall and forward same ports and the speed was at full capacity in 1 minute. here in 9 month never had this luck.</p>
+					</article>
+					<div class="split-line">Tuesday</div>
+					<article class="chat-item">
+						<a class="face-icon" href=""></a>
+						<h2><strong>Bessie Berry </strong>8:31 AM</h2>
+						<p>Funny comparison. so would the proper antivirus not slow down the internet as much or do you mean a freebie doenst protect the computer from viruses?</p>
+					</article>
+					<article class="chat-item">
+						<a class="face-icon" href=""></a>
+						<h2><strong>Jordan Jackson </strong>8:31 AM</h2>
+						<p>I pay for the 4Mb/sec down, 512 Kb/sec up service from O2, and haven't had any problems. In fact, it's relatively quick, and stable. It's not perfect, but I really don't have issues, as long as I keep track of what I'm doing on it. I max out at about 3 Mb/sec down, and 350 Kb/sec up. Probably because of a noisy telephone line, not because I'm being throttled. When my uploads go over 25 KB/sec (note, bytes, not bits), my download speed suffers. This is expected, as downloads require upload bandwidth as well.</p>
+						<img src="./images/chat_pic_1.png" alt="error">
+						<img src="./images/chat_pic_2.png" alt="error">
+					</article>
+					<div class="split-line new-message-split-line">
+						<hr>
+						<div class="split-line-time">Tuesday</div>
+					</div>
+					<article class="chat-item">
+						<a class="face-icon" href=""></a>
+						<h2><strong>Bessie Berry </strong>8:31 AM</h2>
+						<p>I pay for the 4Mb/sec down, 512 Kb/sec up service from O2. In fact, it's relatively quick, and stable. It's not perfect, but I really don't have issues, as long as I keep track of what I'm doing on it. </p>
+					</article>
+					<div class="send-box setting-btn">
+						<ul>
+							<li><input class="button" type="button" value="+"></input></li>
+							<li><input type="text" value="Well, kinda both :) but more of that second option, i`ve seen many systems infected and crawling with"></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+</body>
+<script>
+	function dropdown(){
+		var dropdown = getElementById("dropdown");
+		dropdown.setAttribute("visibility", "visible");
+	}
+</script>
+</html>

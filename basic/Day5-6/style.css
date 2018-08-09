@@ -1,0 +1,36 @@
+* {
+	box-sizing: border-box;
+}
+dl,
+dd,
+dt {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: "Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif;
+	width: 80%;
+	margin: 0 auto;
+}
+.clearfix::after {
+	clear: both;
+	display: block;
+	content: ".";
+	height: 0;
+	visibility: hidden;
+}
+.basic-msg dt {
+	float: left;
+	font-weight: bold;
+}
+.basic-msg dd {
+	margin:0 40px 0 10px;
+	margin-right: 40px;
+	float: left;
+}
+.more-msg dt {
+	font-weight: bold;
+}
+.more-msg dd:nth-of-type(1) {
+	margin-bottom: 15px;
+}

@@ -1,0 +1,63 @@
+* {
+	box-sizing:border-box;
+}
+body {
+	width: 760px;
+	margin: 0 auto;
+	font-size: 14px;
+}
+.header {
+	background-color: grey;
+	color: #fff;
+}
+.header h1{
+	font-size: 16px;
+	padding: 15px 20px;
+}
+dl, dt, dd, h1{
+	margin: 0;
+	padding: 0;
+}
+.container {
+	margin-bottom: 1px;
+}
+.container h1 {
+	float: left;
+	display: block;
+	width: 100px;
+	height: 100px;
+	background-color: #dcdcdc;
+	text-align: center;
+	font-size: 14px;
+	line-height: 100px;
+}
+.container dl {
+	float: left;
+	padding-left: 20px;
+	padding-top: 10px;
+	width: 660px;
+	height: 100px;
+	border-bottom: 1px solid #dcdcdc;
+	border-right: 1px solid #dcdcdc;
+}
+.clearfix::after {
+	content: ".";
+	clear: both;
+	display: block;
+	height: 0;
+	visibility: hidden;
+}
+dt {
+	font-weight: bold;
+}
+.basic-msg dt {
+	float: left;
+}
+.basic-msg dd {
+	float: left;
+	margin-left: 15px;
+	margin-right: 40px;
+}
+.more-msg dt {
+	float: left;
+}

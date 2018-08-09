@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>给爱的人发一封邮件吧</title>
+	<style>
+	* {
+		box-sizing: border-box;
+	}
+	#email-input {
+		width: 200px;
+		padding: 5px 10px;
+	}
+	.email-sug {
+		padding: 0;
+		width: 200px;
+		margin: 0;
+		border: solid 1px gainsboro;
+		list-style-type: none;
+		list-style-position: inside;
+	}
+	.email-sug li {
+		padding: 5px 10px;
+		color: #c9c9c9;
+	}
+	li:hover {
+		background-color: #bddfec;
+	}
+	.special-li {
+		background-color: #ffc5cf;
+	}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<input type="text" id="email-input" autofocus="autofocus">
+		<ul id="email-sug-wrapper" class="email-sug" style="visibility:hidden"></ul>
+	</div>
+	<script>
+	var postfixList = ['163.com', 'gmail.com', '126.com', 'qq.com', '263.net'];
+	var input  = document.querySelector('#email-input');
+	var wrapper = document.querySelector('.wrapper');
+	var tipBox = document.querySelector('#email-sug-wrapper');
+	var nowTipIndex = 0;
+
+	wrapper.onkeyup = function(e) {
+		//方法一 DOM选择
+		// if(getInputText() && (e.keyCode==38 || e.keyCode==40 || e.keyCode==13)) {
+		// 	changeSelectItem(e.keyCode);
+		// }
+		// else{
+		// 	createTipBox();
+		// 	controlTipBox();
+		// }
+
+		//方法二 index索引 
+		if(getInputText()) {
+			changeSelectItem2(e.keyCode);
+			createTipBox();
+			controlTipBox();
+		}
+	};
+	tipBox.onclick = function(e) {
+		if(e.target.nodeName.toLowerCase() == "li") {
+			input.value = e.target.textContent;
+			hiddenTipBox();
+			input.focus();
+		}
+	};
+	input.onblur = function() {
+		console.log("haha");
+		hiddenTipBox();
+	};
+	// function changeSelectItem(key) {
+	// 	var nextItem;
+	// 	var item = document.querySelector('.special-li');
+	// 	if(key == 38) {
+	// 		if(item == tipBox.firstChild){
+	// 			nextItem = tipBox.lastChild;
+	// 		} else {
+	// 			nextItem = item.previousSibling;
+	// 		}
+	// 	}
+	// 	else if(key == 40) {
+	// 		if(item == tipBox.lastChild){
+	// 			nextItem = tipBox.firstChild;
+	// 		} else {
+	// 			nextItem = item.nextSibling;
+	// 		}
+	// 	}
+	// 	else if(key ==13) {
+	// 		input.value = item.textContent;
+	// 		hiddenTipBox();
+	// 		return;
+	// 	}
+	// 	nextItem.setAttribute("class", "special-li");
+	// 	item.removeAttribute('class');
+	// }
+	function changeSelectItem2(key) {
+		if(key == 38) {
+			if(nowTipIndex == 0){
+				nowTipIndex = tipBox.childNodes.length-1;
+			} else {
+				nowTipIndex--;
+			}
+		}
+		else if(key == 40) {
+			if(nowTipIndex == tipBox.childNodes.length-1){
+				nowTipIndex = 0;
+			} else {
+				nowTipIndex++;
+			}
+		}
+		else if(key ==13) {
+			input.value = tipBox.childNodes[nowTipIndex].textContent;
+			hiddenTipBox();
+		}
+		else if(key == 27) {
+			input.select();
+		}
+	}
+
+	function getInputText() {
+		return input.value.trim();
+	}
+
+	function createTipMsg() {
+		var msgs = [];
+		var inputText = getInputText().split("@");
+		for(var e of postfixList) {
+			if(inputText[1]){
+				if(e.indexOf(inputText[1])==0){
+					msgs.push(inputText[0] + "@" + e);
+				}
+			}
+			else msgs.push(inputText[0] + "@" + e);
+		}
+		if(msgs.length == 0) {
+			for(var e of postfixList) {
+				msgs.push(inputText[0] + "@" + e);
+			}
+		}
+		return msgs;
+	}
+
+	function createTipBox() {
+		tipBox.innerHTML = "";
+		msgs = createTipMsg();
+		for(var i=0; i<msgs.length; i++) {
+			var list = document.createElement('li');
+			list.textContent = msgs[i];
+			tipBox.appendChild(list);
+		}
+		tipBox.childNodes[nowTipIndex].setAttribute('class', 'special-li');
+	}
+
+	function controlTipBox() {
+		if(getInputText()) {
+			console.log(getInputText());
+			showTipBox();
+		} else {
+			hiddenTipBox();
+		}
+	}
+
+	function showTipBox() {
+		tipBox.style.visibility = "visible";
+	}
+	function hiddenTipBox() {
+		tipBox.style.visibility = "hidden";
+	}
+	</script>
+</body>
+</html>

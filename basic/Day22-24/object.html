@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>对象的练习</title>
+</head>
+<body>
+	<div>
+		<p>（在Console中查看结果）：</p>
+		<button onclick="findIdByName('Kai')">根据名字查ID</button>
+		<button onclick="findNameById(7)">根据ID查名字</button>
+		<button onclick="getListWithDLR()">前序遍历</button>
+		<button onclick="getListWithLDR()">中序遍历</button>
+		<button onclick="getListWithLRD()">后序遍历</button>
+	</div>
+	
+	<script>
+	var content = document.querySelector('.tree');
+	var tree = {
+    "id": 0,
+    "name": "root",
+    "left": {
+        "id": 1,
+        "name": "Simon",
+        "left": {
+            "id": 3,
+            "name": "Carl",
+            "left": {
+                "id": 7,
+                "name": "Lee",
+                "left": {
+                    "id": 11,
+                    "name": "Fate"
+                }
+            },
+            "right": {
+                "id": 8,
+                "name": "Annie",
+                "left": {
+                    "id": 12,
+                    "name": "Saber"
+                }
+            }
+        },
+        "right": {
+            "id": 4,
+            "name": "Tony",
+            "left": {
+                "id": 9,
+                "name": "Candy"
+            }
+        }
+    },
+    "right": {
+        "id": 2,
+        "name": "right",
+        "left": {
+            "id": 5,
+            "name": "Carl",
+        },
+        "right": {
+            "id": 6,
+            "name": "Carl",
+            "right": {
+                "id": 10,
+                "name": "Kai"
+            }        
+        }
+    }
+}
+
+//所有叶子节点
+var leaves = [];
+
+//后序遍历
+function getElems(obj){
+	var leaf = {};
+	leaf.id = obj.id;
+	leaf.name = obj.name;
+	for(var ele in obj) {
+		if(typeof(obj[ele]) == "object"){
+			getElems(obj[ele]);
+		}
+	}
+	leaves.push(leaf);
+}
+
+//前序遍历
+function preGetElem(obj) {
+	var leaf = {};
+	leaf.id = obj.id;
+	leaves.push(leaf);
+	for(var ele in obj){
+		if(typeof(obj[ele]) == "object"){
+			preGetElem(obj[ele]);
+		}
+	}
+}
+
+//中序遍历
+function inOrderGetElem(obj) {
+	var leaf = {};
+	var hasAddLeft = false;
+	var hasAddRoof = false;
+	leaf.id = obj.id;
+	for(var ele in obj){
+		if(typeof(obj[ele]) == "object"){
+			inOrderGetElem(obj[ele]);
+			hasAddLeft = true;
+		}
+		if(hasAddLeft&&!hasAddRoof){
+			leaves.push(leaf);
+			hasAddRoof = true;
+		}
+	}
+	if(!hasAddRoof){
+		leaves.push(leaf);
+	}
+}
+
+// 假设id和name均不会重复，根据输入name找到对应的id
+function findIdByName(name) {
+	getElems(tree);
+	for(var ele of leaves){
+		if(ele.name == name){
+			console.log(ele.id);
+		}
+	}
+}
+
+// 假设id和name均不会重复，根据输入id找到对应的name
+function findNameById(id) {
+	getElems(tree);
+	for(var ele of leaves){
+		if(ele.id == id){
+			console.log(ele.name);
+		}
+	}
+}
+
+// 把这个对象中所有的id以“前序遍历”的方式全部输出到console中
+function getListWithDLR() {
+	preGetElem(tree);
+	for(var ele of leaves){
+		console.log(ele);
+	}
+}
+
+// 把这个对象中所有的id以“中序遍历”的方式全部输出到console中
+function getListWithLDR() {
+	inOrderGetElem(tree);
+	for(var ele of leaves){
+		console.log(ele);
+	}
+}
+
+// 把这个对象中所有的id以“后序遍历”的方式全部输出到console中
+function getListWithLRD() {
+	getElems(tree);
+	for(var ele of leaves){
+		console.log(ele);
+	}
+}
+
+//测试
+// findIdByName('Kai');
+// findNameById(7)
+// getListWithDLR();
+// getListWithLDR();
+//getListWithLRD();
+
+	</script>
+</body>
+</html>

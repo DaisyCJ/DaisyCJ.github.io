@@ -1,0 +1,57 @@
+* {
+	box-sizing: border-box;
+}
+body{
+	width: 90%;
+	margin: 0 auto;
+	padding-top: 20px;
+	font-family: "Arial", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+	font-size: 16px;
+}
+dl,
+dt,
+dd {
+	margin: 0;
+	padding: 0;
+}
+.header {
+	float: left;
+	width: 20%;
+	height: 900px;
+	max-width: 500px;
+	min-width: 100px;
+	margin: 0 auto;
+	padding-top: 30px;
+	text-align: center;
+	background-color: #2196f3;
+	color: #FFF;
+}
+.main {
+	float: left;
+	width: 80%;
+	max-width: 1280px;
+	min-width: 500px;
+	margin: 0 auto;
+	padding-left: 20px;
+}
+.container::after {
+	content: ".";
+	clear: both;
+	display: block;
+	height: 0;
+	visibility: hidden;
+}
+dt{
+	font-weight: bold;
+}
+.basic-msg dt {
+	float: left;
+}
+.basic-msg dd {
+	float: left;
+	margin-left: 15px;
+	margin-right: 40px;
+}
+.more-msg dd:nth-of-type(1) {
+	margin-bottom: 20px;
+}

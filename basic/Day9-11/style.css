@@ -1,0 +1,278 @@
+/*公共的复用属性*/
+* {
+	box-sizing:border-box;
+}
+body, 
+p,
+h1, h2, h3,
+ul, li, dd {
+	margin: 0;
+	padding: 0; 
+	font-weight: normal;
+}
+.clearfix:after {
+	display: block;
+	content: ".";
+	clear: both;
+}
+.title {
+	padding: 30px 0;
+	font-size: 42px;
+	line-height: 52px;
+	text-align: center;
+}
+.small-title {
+	font-size: 20px;
+	line-height: 32px;
+}
+.normal-input {
+	padding: 15px;
+	background-color: transparent;
+	border: solid 1px #d4d4d4;
+	color: #ffffff;
+	font-size: 14px;
+	border-radius: 5px;
+}
+.important-input {
+	padding: 15px;
+	background-color: #fff;
+	color: #000;
+	font-size: 14px;
+	border-radius: 5px;
+}
+.container {
+	padding: 4% 12%;
+}
+p {
+	font-size: 16px;
+	line-height: 28px;
+	color: #9d968c;
+}
+
+/*私有属性*/
+.header {
+	padding: 200px 0 80px 0;
+	background-image: url(./images/header_bg.png);
+	color: #fffdfb;
+	text-align: center;
+}
+.header>h1 {
+	padding-bottom:80px;
+	font-size: 62px;
+}
+.header p {
+	padding: 0 20%;
+	font-size: 20px;
+	line-height: 32px;
+	color: #9d968c;
+}
+.sign-up {
+	height: 250px;
+	width: 970px;
+	margin: 100px auto;
+	padding: 50px;
+	border: solid 1px #524e4b;
+}
+.sign-up h2 {
+	font-size: 16px;
+}
+.sign-up h3 {
+	margin-top: 20px;
+	color: #9d968c;
+	font-size: 12px;
+}
+.sign-up [type="text"] {
+	margin: 45px 10px 0 10px;
+	width: 290px;
+}
+.sign-up [type="submit"] {
+	margin: 45px 10px 0 10px;
+	width: 125px;
+}
+.section-1 h1 {
+	margin: 0 auto;
+	width: 800px;
+}
+.section-1 p {
+	text-align: center;
+	font-size: 14px;
+}
+.msg {
+	padding: 20px 80px;
+	width: 50%;
+	height: 140px;
+	float: left;
+}
+.msg dt {
+	font-size: 20px;
+	margin-bottom: 20px;
+}
+.msg dd {
+	color: #929292;
+}
+.phone {
+	background: url(./images/phone.png) no-repeat 0 25px;
+}
+.pencil {
+	background: url(./images/pencil.png) no-repeat 0 25px;
+}
+.check {
+	background: url(./images/check.png) no-repeat 0 25px;
+}
+.setting {
+	background: url(./images/setting.png) no-repeat 0 25px;
+}
+.section-2 {
+	height: 800px;
+	background-image: url(./images/section2_bg.png);
+	color: #fff;
+}
+.section-2 article {
+	width: 385px;
+	margin-top: 100px;
+}
+.section-2 p {
+	padding: 40px 0;
+}
+.section-2 button {
+	margin-right: 20px;
+}
+.section-3 {
+	border-bottom: solid 1px #eaeaea;
+}
+.articles {
+	display: flex;
+	padding-top: 20px;
+}
+.section-3 article {
+	min-width: 200px;
+	padding-top: 70px;
+	text-align: center;
+}
+.section-3 article:nth-of-type(2) {
+	margin: 0 50px;
+}
+.section-3 .article-singleton {
+	background: url(./images/singleton.png) no-repeat 50% 0;
+}
+.section-3 .article-hero {
+	background: url(./images/hero.png) no-repeat 50% 0;
+}
+.section-3 .article-portland {
+	background: url(./images/portland.png) no-repeat 50% 0;
+}
+.section-4 {
+	border-bottom: solid 1px #eaeaea;
+}
+.section-4 article {
+	padding: 30px 0;
+	display: flex;
+	flex-wrap: wrap;
+}
+.section-4 .describe {
+	width: 400px;
+	padding-top: 50px;
+}
+.describe:last-child {
+	padding-left: 90px;
+}
+.describe:first-child {
+	padding-right: 90px;
+}
+.describe p {
+	padding-top: 20px;
+}
+.section-5 {
+	border-bottom: solid 1px #eaeaea;
+}
+.section-5 p {
+	width: 75%;
+	margin: 0 auto;
+	padding-bottom: 20px;
+	text-align: center;
+}
+.img-group img {
+	margin: 10px;
+	max-width: 45%;
+	float: left;
+}
+.section-6 {
+	display: flex;
+}
+.section-6 .write-us {
+	width: 470px;
+	padding: 30px 0;
+	border: solid 1px #eaeaea;
+	border-radius: 5px;
+	text-align: center;
+}
+.write-us form {
+	margin-top: 20px;
+}
+.write-us input,  
+textarea{
+	width: 370px;
+	margin: 15px 50px;
+}
+.special-btn {
+	background-color: #141414;
+	color: #fff;
+}
+.contact-us {
+	padding: 50px 100px;
+}
+.contact-msg {
+	margin: 20px 0;
+	padding-left: 40px;
+	line-height: 1.5;
+	list-style: none;
+}
+.msg-address {
+	background: url(./images/msg_address.png) no-repeat 0 0;
+}
+.msg-phone {
+	background: url(./images/msg_phone.png) no-repeat 0;
+}
+.msg-email {
+	background: url(./images/msg_email.png) no-repeat 0;
+}
+.footer {
+	display: flex;
+	padding: 50px 70px;
+	overflow: auto;
+	background-color: #141414;
+	color: #fff;
+}
+.footer-msg {
+	padding: 0 50px;
+}
+.footer-msg li {
+	padding: 10px 0;
+	list-style: none;
+	list-style-position: inside;
+	color: #9d968c;
+}
+.icon-link {
+	display: inline-block;
+	margin-top: 30px;
+	width: 40px;
+	height: 40px;
+}
+.twitter {
+	background: url(./images/twitter.png) no-repeat 0 0;
+}
+.google {
+	background: url(./images/google.png) no-repeat 0 0;
+}
+.facebook {
+	background: url(./images/facebook.png) no-repeat 0 0;
+}
+.tumble {
+	background: url(./images/tumble.png) no-repeat 0 0;
+}
+.Pinterest {
+	background: url(./images/Pinterest.png) no-repeat 0 0;
+}
+.LinkedIn {
+	background: url(./images/LinkedIn.png) no-repeat 0 0;
+}

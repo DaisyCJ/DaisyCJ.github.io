@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>简历</title>
+  <link rel="stylesheet" type="text/css" href="style.css" id="style-type">
+  <style>
+  .buttons {
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  }
+  </style>
+</head>
+<body>
+  <div class="buttons">
+    <button type="button" onclick="type1()">第一种</button>
+    <button type="button" onclick="type2()">第二种</button>
+    <button type="button" onclick="type3()">第三种</button>
+  </div>
+  <header class="header">
+    <h1>简历</h1>
+  </header>
+  <main class="main">
+    <section class="container clearfix">
+      <h1 class="clearfix">基本信息</h1>
+      <dl class="basic-msg">
+        <dt>姓名</dt>
+        <dd>张三</dd>
+        <dt>性别</dt>
+        <dd>男</dd>
+        <dt>应聘职位</dt>
+        <dd>Web前端工程师</dd>
+      </dl>
+    </section>
+    <section class="container clearfix">
+      <h1>联系方式</h1>
+      <dl class="basic-msg">
+        <dt>手机</dt>
+        <dd>12312341234</dd>
+        <dt>Email</dt>
+        <dd><a href="">joinefe@baidu.com</a></dd>
+        <dt>个人主页</dt>
+        <dd><a href="">Github</a></dd>
+      </dl>
+    </section>
+    <section class="container clearfix">
+      <h1>能力描述</h1>
+      <dl class="more-msg clearfix">
+        <dt>技能能力</dt>
+        <dd>熟练掌握HTML,CSS,JavaScript</dd>
+        <dt>综合能力</dt>
+        <dd>良好的沟通，主动积极，努力勤奋</dd>
+      </dl>
+    </section>
+    <section class="container clearfix">
+      <h1>教育经历</h1>
+      <dl class="more-msg">
+        <dt>本科</dt>
+        <dd>百度前端技术学院小薇学院</dd>
+        <dt>研究生</dt>
+        <dd>百度前端技术学大斌学院</dd>
+      </dl>
+    </section>
+    <section class="container clearfix">
+      <h1>教育经历</h1>
+      <dl class="more-msg">
+        <dt>小度小度</dt>
+        <dd>百作为前端工程师角色参与了ABC组件的开发</dd>
+        <dt>SAN Doc</dt>
+        <dd>作为文档工程师参与了SAN Doc编写</dd>
+      </dl>
+    </section>
+  </main>
+
+  <script>
+  var styleType = document.querySelector('#style-type');
+  function type1() {
+    styleType.setAttribute('href', 'style.css');
+  }
+  function type2() {
+    styleType.setAttribute('href', 'style_2.css');
+  }
+  function type3() {
+    styleType.setAttribute('href', 'style_3.css');
+  }
+  </script>
+</body>
+</html>
