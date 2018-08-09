@@ -128,7 +128,7 @@
 			lineChart.drawChart();
 
 			barChart.clearLine();
-			barChart.initData(getYearData(e.target.parentNode));
+			barChart.initData([getYearData(e.target.parentNode)]);
 			barChart.drawChart();
 		}
 	}
@@ -142,6 +142,10 @@
 		lineChart.clearLine();
 		lineChart.initData(datas);
 		lineChart.drawChart();
+
+		barChart.clearLine();
+		barChart.initData(datas);
+		barChart.drawChart();
 	}
 
 
